@@ -6,6 +6,7 @@ class SimpleCRUDController {
 
     def simpleCRUDControllerService
     def index() {
+
         render(simpleCRUDControllerService.serviceMethod()) as JSON
     }
 }
