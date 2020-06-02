@@ -7,5 +7,7 @@ class SecUser {
     String fullName
 
     static constraints = {
+        email nullable: true
+        fullName nullable: true
     }
 }
