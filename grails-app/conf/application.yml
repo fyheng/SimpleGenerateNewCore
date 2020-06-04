@@ -93,9 +93,18 @@ dataSource:
     jmxExport: true
 #    driverClassName: org.h2.Driver
 #    driverClassName: com.mysql.jdbc.Driver
+    logSql: true
+    formatSql: true
     dialect: org.hibernate.dialect.MySQL5InnoDBDialect
     username: root
     password: '12345678'
+#datasource:
+#    SimpleGenerate:
+#    driverClassName: com.mysql.jdbc.Driver
+#    dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+#    dbCreate: validate
+#    username: root
+#    password: '12345678'
 
 environments:
     development:
@@ -130,3 +139,9 @@ environments:
                 testOnReturn: false
                 jdbcInterceptors: ConnectionState
                 defaultTransactionIsolation: 2 # TRANSACTION_READ_COMMITTED
+---
+grails:
+    plugin:
+        sentry:
+            dsn: https://d695012aa1dd4abd9efe2a4b9c5fd7e8@o402644.ingest.sentry.io/5264073
+            active: true
