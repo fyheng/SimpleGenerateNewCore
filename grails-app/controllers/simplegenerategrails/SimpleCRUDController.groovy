@@ -8,6 +8,6 @@ class SimpleCRUDController {
     def index() {
 
         //this is we add new 
-        render(simpleCRUDControllerService.serviceMethod()) as JSON
+        render simpleCRUDControllerService.serviceMethod() as JSON
     }
 }

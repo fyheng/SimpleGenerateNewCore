@@ -92,12 +92,14 @@ dataSource:
     pooled: true
     jmxExport: true
 #    driverClassName: org.h2.Driver
-#    driverClassName: com.mysql.jdbc.Driver
+    driverClassName: com.mysql.cj.jdbc.Driver
     logSql: true
     formatSql: true
     dialect: org.hibernate.dialect.MySQL5InnoDBDialect
-    username: root
-    password: '12345678'
+    username: doadmin
+    password: 'venjudvexu0bmmh2'
+#    username: root
+#    password: '12345678'
 #datasource:
 #    SimpleGenerate:
 #    driverClassName: com.mysql.jdbc.Driver
@@ -110,35 +112,39 @@ environments:
     development:
         dataSource:
             dbCreate: update
-            url: jdbc:mysql://localhost:3306/SimpleGenerate
+            url: jdbc:mysql://db-mysql-sgp1-84693-do-user-7584394-0.a.db.ondigitalocean.com:25060/SimpleGenerate?autoReconnect=true&useSSL=false
+#            url: jdbc:mysql://localhost:3306/SimpleGenerate?autoReconnect=true&useSSL=false
 #            url: jdbc:h2:mem:devDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE
     test:
         dataSource:
             dbCreate: update
-            url: jdbc:mysql://localhost:3306/SimpleGenerate?useUnicode=yes&characterEncoding=UTF-8
+            url: jdbc:mysql://db-mysql-sgp1-84693-do-user-7584394-0.a.db.ondigitalocean.com:25060/SimpleGenerate?useUnicode=yes&characterEncoding=UTF-8
+#            url: jdbc:mysql://localhost:3306/SimpleGenerate?useUnicode=yes&characterEncoding=UTF-8
 #            url: jdbc:h2:mem:testDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE
+
     production:
         dataSource:
             dbCreate: none
-            url: jdbc:h2:./prodDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE
+            url: jdbc:mysql://localhost:3306/SimpleGenerate?useUnicode=yes&characterEncoding=UTF-8
+#            url: jdbc:mysql://db-mysql-sgp1-84693-do-user-7584394-0.a.db.ondigitalocean.com/SimpleGenerate?useUnicode=yes&characterEncoding=UTF-8
             properties:
-                jmxEnabled: true
-                initialSize: 5
-                maxActive: 50
-                minIdle: 5
-                maxIdle: 25
-                maxWait: 10000
-                maxAge: 600000
-                timeBetweenEvictionRunsMillis: 5000
-                minEvictableIdleTimeMillis: 60000
-                validationQuery: SELECT 1
-                validationQueryTimeout: 3
-                validationInterval: 15000
-                testOnBorrow: true
-                testWhileIdle: true
-                testOnReturn: false
-                jdbcInterceptors: ConnectionState
-                defaultTransactionIsolation: 2 # TRANSACTION_READ_COMMITTED
+            jmxEnabled: true
+            initialSize: 5
+            maxActive: 50
+            minIdle: 5
+            maxIdle: 25
+            maxWait: 10000
+            maxAge: 600000
+            timeBetweenEvictionRunsMillis: 5000
+            minEvictableIdleTimeMillis: 60000
+            validationQuery: SELECT 1
+            validationQueryTimeout: 3
+            validationInterval: 15000
+            testOnBorrow: true
+            testWhileIdle: true
+            testOnReturn: false
+            jdbcInterceptors: ConnectionState
+            defaultTransactionIsolation: 2 # TRANSACTION_READ_COMMITTED
 ---
 grails:
     plugin:

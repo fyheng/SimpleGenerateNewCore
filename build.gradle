@@ -50,7 +50,7 @@ dependencies {
     profile "org.grails.profiles:web"
     runtime "org.glassfish.web:el-impl:2.1.2-b03"
     runtime "com.h2database:h2"
-    runtime "mysql:mysql-connector-java:8.0.19"
+    runtime "mysql:mysql-connector-java:8.0.11"
     compile 'org.grails.plugins:sentry:11.7.24'
 
     runtime "org.apache.tomcat:tomcat-jdbc"
