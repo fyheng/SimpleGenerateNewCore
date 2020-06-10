@@ -7,7 +7,9 @@ class SimpleCRUDController {
     def simpleCRUDControllerService
     def index() {
 
-        //this is we add new 
-        render simpleCRUDControllerService.serviceMethod() as JSON
+        //this is we add new
+        def newUser = simpleCRUDControllerService.saveAction()
+        def checkCondition = simpleCRUDControllerService.serviceMethod()
+        render (newUser) as JSON
     }
 }
