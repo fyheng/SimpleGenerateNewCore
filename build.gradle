@@ -52,6 +52,7 @@ dependencies {
     runtime "com.h2database:h2"
     runtime "mysql:mysql-connector-java:8.0.11"
     compile 'org.grails.plugins:sentry:11.7.24'
+    compileOnly 'io.micronaut:micronaut-inject-groovy'
 
     runtime "org.apache.tomcat:tomcat-jdbc"
     runtime "com.bertramlabs.plugins:asset-pipeline-grails:2.14.8"
